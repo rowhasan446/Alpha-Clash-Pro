@@ -18,12 +18,49 @@ function handleKeyboardKeyUpEvent(){
 //    check matching or not
 if(playerPressed === expectedAlphabet){
     console.log('you get a point');
-    console.log('you have pressed correctly',  expectedAlphabet);
+    // console.log('you have pressed correctly',  expectedAlphabet);
+    
+    // update score
+    // const currentScoreElement =  document.getElementById('current-score');
+    // const currentScoreText = currentScoreElement.innerText;
+    // console.log(currentScoreText);
+    // const currentScore = parseInt(currentScoreText);
+    // console.log(currentScore);
+    const currentScore = getTextElementValueById('current-score');
+
+
+    const updatedScore = currentScore + 1;
+    // currentScoreElement.innerText = newScore;
+    setTextElementValueById('current-score', updatedScore);
+
+
+
+
+
+
+    // start new round
     removeBgColorById(expectedAlphabet);
     continueGame();
 }
 else{
     console.log('opps! lost a life');
+
+    const currentLife = getTextElementValueById('current-life');
+    const updatedLife = currentLife - 1;
+    setTextElementValueById('current-life', updatedLife);
+
+
+
+    // ---------------------------------------------------
+    // life count decrease
+    // const currentLifeElment = document.getElementById('current-life');
+    // const currentLifeText = currentLifeElment.innerText;
+    // const currentLife = parseInt(currentLifeText);
+
+    // const newLife = currentLife - 1;
+    // currentLifeElment.innerText = newLife;
+
+
 }
 
 }

@@ -18,7 +18,17 @@ function removeBgColorById(elemntId){
     element.classList.remove('bg-yellow-400');
 }
 
+function getTextElementValueById(elemntId){
+    const element = document.getElementById(elemntId);
+    const elementValueText = element.innerText;
+    const value =  parseInt(elementValueText);
+    return value;
+}
 
+function setTextElementValueById(elemntId, value){
+    const element = document.getElementById(elemntId);
+    element.innerText = value;
+}
 
 
 
