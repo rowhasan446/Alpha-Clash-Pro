@@ -48,6 +48,10 @@ else{
     const currentLife = getTextElementValueById('current-life');
     const updatedLife = currentLife - 1;
     setTextElementValueById('current-life', updatedLife);
+    
+    if(updatedLife === 0){
+        gameOver();
+    }
 
 
 
@@ -88,6 +92,17 @@ function continueGame(){
 
 function Start(){
     hideElementById('home-screen');
+    hideElementById('final-score');
     showElementById('playground');
+    // reset score and life
+    setTextElementValueById('current-life', 3);
+    setTextElementValueById('current-score', 0);
     continueGame();
+}
+function gameOver(){
+    hideElementById('playground');
+    showElementById('final-score');
+    const lastScore = getTextElementValueById('current-score');
+    setTextElementValueById('last-score', lastScore);
+
 }

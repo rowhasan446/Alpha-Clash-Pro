@@ -88,13 +88,14 @@
 
         </section>
         <!-- final score -->
-        <section class="score flex justify-center items-center min-h-screen hidden ">
+        <section id="final-score" class=" flex justify-center items-center min-h-screen hidden ">
             <div class="text-white text-center space-y-6 bg-[#ffffff33] rounded-xl p-10">
+                <h4 class="text-4xl">Game Over!!</h4>
                 <h1 class="text-6xl">
                     <span class="font-bold">Score:</span>
-                    <span>14</span>
+                    <span id="last-score">14</span>
                 </h1>
-                <button class="btn bg-white text-blue-800">Play Again</button>
+                <button onclick="Start()" class="btn bg-white text-blue-800">Play Again</button>
                 <p>Practice will make you pro</p>
             </div>
 
