@@ -10,6 +10,11 @@ function handleKeyboardKeyUpEvent(){
     const playerPressed = event.key;
    console.log('player pressed', playerPressed);
 
+//    stop the game if pressed esc
+if(playerPressed === 'Escape'){
+    gameOver();
+}
+
    const currenAlphabetElement = document.getElementById('current-alphabet');
    const currentAlphabet = currenAlphabetElement.innerText;
    const expectedAlphabet = currentAlphabet.toLowerCase();
@@ -104,5 +109,8 @@ function gameOver(){
     showElementById('final-score');
     const lastScore = getTextElementValueById('current-score');
     setTextElementValueById('last-score', lastScore);
+
+    const  currentAlphabet = getElementTextById('current-alphabet');
+    removeBgColorById(currentAlphabet);
 
 }
